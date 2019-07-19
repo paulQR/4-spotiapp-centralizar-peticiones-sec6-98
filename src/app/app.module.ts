@@ -17,6 +17,8 @@ import { SearchComponent } from './components/search/search.component';
 
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
+import { LoadingComponent } from './components/shared/loading/loading.component';
+
 // importar rutas
 import { ROUTES } from './app.routes';
 
@@ -37,7 +39,7 @@ import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(ROUTES, {useHash:true}) ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, ArtistaComponent, SearchComponent, NavbarComponent, NoimagePipe, TarjetasComponent ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, ArtistaComponent, SearchComponent, NavbarComponent, NoimagePipe, TarjetasComponent, LoadingComponent ],
   providers:[],
   bootstrap:    [ AppComponent ]
 })
