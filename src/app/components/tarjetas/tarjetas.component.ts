@@ -9,5 +9,9 @@ export class TarjetasComponent {
     @Input() items: any[] = [];
     
     constructor(){}
+
+    verArtista( item: any){
+        console.log(item);
+    }
  
 }
