@@ -57,7 +57,7 @@ export class SpotifyService{
          return this.getQuery('browse/new-releases?limit=20').pipe( map( data => data['albums'].items ));
     }
 
-    getArtista(termino: string){
+    getArtistas(termino: string){
         /*
         const headers = new HttpHeaders({
           'Authorization': 'Bearer BQAi0_UkT3m2tjJWsTXEKHSp.....'
