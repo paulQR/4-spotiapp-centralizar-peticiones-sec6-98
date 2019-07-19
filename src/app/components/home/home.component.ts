@@ -9,7 +9,7 @@ import{ SpotifyService} from '../../services/spotify.service';
 })
 export class HomeComponent {
 
-    nuevaCanciones: any[] = [];
+    nuevasCanciones: any[] = [];
     /*
     paises: any[] = [];
     constructor( private http: HttpClient ){
@@ -26,8 +26,7 @@ export class HomeComponent {
             console.log(data.albums.items);
             this.nuevaCanciones = data.albums.items;
             */
-            console.log(data);
-            this.nuevaCanciones = data;            
+            this.nuevasCanciones = data;            
         });
     }
 
