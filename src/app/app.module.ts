@@ -32,9 +32,12 @@ import { ROUTES } from './app.routes';
 // Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
 
+// tarjetas
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(ROUTES, {useHash:true}) ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, ArtistaComponent, SearchComponent, NavbarComponent, NoimagePipe ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, ArtistaComponent, SearchComponent, NavbarComponent, NoimagePipe, TarjetasComponent ],
   providers:[],
   bootstrap:    [ AppComponent ]
 })
