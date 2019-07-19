@@ -16,6 +16,7 @@ export class SpotifyService{
         console.log('Spotify service listo');
     }
 
+    // seccion 6 - 98 - centralizar las peticiones hacia spotify
     getQuery(query: string){
         const url= `https://api.spotify.com/v1/${query}`;
 
@@ -26,9 +27,11 @@ export class SpotifyService{
         return this.http.get(url, { headers });     
     }
     getNewReleases(){
+        /*
         const headers = new HttpHeaders({
           'Authorization': 'Bearer BQAi0_UkT3m2tjJWsTXEKHSp.....'
         });
+        */
         /*
           this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=5', { headers }).subscribe(data =>{
             console.log(data);
@@ -46,14 +49,20 @@ export class SpotifyService{
         } ));     
         */  
 
+        /*
         return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers }).pipe( map( data => data['albums'].items ));
+        */
 
+         // seccion 6 - 98 - centralizar las peticiones hacia spotify
+         return this.getQuery('browse/new-releases?limit=20').pipe( map( data => data['albums'].items ));
     }
 
     getArtista(termino: string){
+        /*
         const headers = new HttpHeaders({
           'Authorization': 'Bearer BQAi0_UkT3m2tjJWsTXEKHSp.....'
         });   
+        */
         //return this.http.get('https://api.spotify.com/v1/search?q=ed%20sheeran&type=artist&limit=15', { headers });
         /*
         return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=15`, { headers });          
@@ -65,7 +74,13 @@ export class SpotifyService{
               return data['artists'].items;
         } ));        
         */
+
+        /*
         return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=15`, { headers }).pipe( map( data => data['artists'].items));          
+        */
+
+        // seccion 6 - 98 - centralizar las peticiones hacia spotify
+        return this.getQuery(`search?q=${ termino }&type=artist&limit=15`).pipe( map( data => data['artists'].items));
 
     }
 }
