@@ -16,6 +16,15 @@ export class SpotifyService{
         console.log('Spotify service listo');
     }
 
+    getQuery(query: string){
+        const url= `https://api.spotify.com/v1/${query}`;
+
+        const headers = new HttpHeaders({
+          'Authorization': 'Bearer BQAi0_UkT3m2tjJWsTXEKHSp.....'
+        });   
+
+        return this.http.get(url, { headers });     
+    }
     getNewReleases(){
         const headers = new HttpHeaders({
           'Authorization': 'Bearer BQAi0_UkT3m2tjJWsTXEKHSp.....'
