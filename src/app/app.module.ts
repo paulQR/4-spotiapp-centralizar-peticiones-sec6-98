@@ -29,9 +29,12 @@ import { ROUTES } from './app.routes';
   ],
 */
 
+// Pipes
+import { NoimagePipe } from './pipes/noimage.pipe';
+
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(ROUTES, {useHash:true}) ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, ArtistaComponent, SearchComponent, NavbarComponent ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, ArtistaComponent, SearchComponent, NavbarComponent, NoimagePipe ],
   providers:[],
   bootstrap:    [ AppComponent ]
 })
